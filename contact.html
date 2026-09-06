@@ -11,22 +11,25 @@
   <link rel="icon" href="assets/logo.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            canvas: '#12151B',
-            panel:  '#1A1F27',
-            ink:    '#F3F1EA',
-            muted:  '#98A0AC',
-            accent: '#D9A94A',
+            canvas: '#FFF9F6',
+            panel:  '#FFFFFF',
+            ink:    '#0F151D',
+            muted:  '#5B6472',
+            accent: '#FF7448',
+            accent2: '#D3E1FF',
           },
           fontFamily: {
-            sans: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Fredoka', 'Inter', 'system-ui', 'sans-serif'],
           },
         },
       },
@@ -34,7 +37,7 @@
   </script>
 
   <style>
-    body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     .reveal { opacity: 0; transform: translateY(28px) scale(.98); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
@@ -54,17 +57,17 @@
   <div id="progress" class="fixed top-0 left-0 h-[3px] bg-accent z-[60]" style="width:0%"></div>
 
   <!-- ══════════════ NAV ══════════════ -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm transition-shadow duration-300">
+  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/85 backdrop-blur-sm transition-shadow duration-300">
     <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2.5 font-extrabold text-lg tracking-tight transition-transform duration-300 hover:scale-105">
+      <a href="index.html" class="flex items-center gap-2.5 font-display font-semibold text-lg tracking-tight">
         <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
         ExpatCompass
       </a>
 
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-        <li><a href="about.html" class="link-underline text-ink/80 hover:text-ink [&[aria-current]]:text-accent">About</a></li>
-        <li><a href="services.html" class="link-underline text-ink/80 hover:text-ink [&[aria-current]]:text-accent">Services</a></li>
-        <li><a href="contact.html" class="inline-flex items-center bg-accent text-canvas font-bold text-sm rounded-xl px-5 py-2.5 transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5">Contact</a></li>
+        <li><a href="about.html" class="link-underline text-ink/70 hover:text-ink [&[aria-current]]:text-accent">About</a></li>
+        <li><a href="services.html" class="link-underline text-ink/70 hover:text-ink [&[aria-current]]:text-accent">Services</a></li>
+        <li><a href="contact.html" class="inline-flex items-center bg-accent text-white font-semibold text-sm rounded-full px-5 py-2.5 transition-all duration-300 hover:brightness-105 hover:-translate-y-0.5">Contact</a></li>
       </ul>
 
       <button id="nav-toggle" class="md:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
@@ -72,7 +75,7 @@
       </button>
     </nav>
 
-    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-white/10">
+    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-black/10">
       <a href="about.html"    class="block py-2.5 font-medium [&[aria-current]]:text-accent">About</a>
       <a href="services.html" class="block py-2.5 font-medium [&[aria-current]]:text-accent">Services</a>
       <a href="contact.html"  class="block py-2.5 font-medium text-accent">Contact →</a>
@@ -82,37 +85,37 @@
   <main>
     <!-- ══════════════ HERO ══════════════ -->
     <section class="relative max-w-3xl mx-auto px-6 pt-40 pb-16 overflow-hidden">
-      <div class="blob blob-float w-80 h-80 bg-accent/20 -top-16 -right-20"></div>
+      <div class="blob blob-float w-80 h-80 bg-accent2/50 -top-16 -right-20"></div>
       <p class="relative reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-5">Get In Touch</p>
-      <h1 class="relative reveal font-extrabold text-4xl md:text-7xl tracking-tight leading-[0.95] mb-6" style="transition-delay:.1s">Let's talk.</h1>
+      <h1 class="relative reveal font-display font-semibold text-4xl md:text-6xl tracking-tight leading-[1.05] mb-6" style="transition-delay:.1s">Let's talk.</h1>
       <p class="relative reveal text-lg text-muted" style="transition-delay:.2s">Have a question, a story to share, or want to get involved? Here's how to reach us.</p>
     </section>
 
     <!-- ══════════════ WAYS TO CONNECT (cards) ══════════════ -->
     <section class="max-w-5xl mx-auto px-6 pb-16 grid sm:grid-cols-3 gap-6">
       <!-- TODO: replace with a real mailto: link once you have a contact email -->
-      <a href="#" class="group reveal bg-panel rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30">
-        <div class="w-12 h-12 mx-auto mb-5 rounded-xl bg-accent/15 text-accent flex items-center justify-center text-xl transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">✉</div>
-        <h2 class="font-extrabold text-lg mb-2">Email Us</h2>
+      <a href="#" class="group reveal bg-panel rounded-[1.75rem] p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-accent2/60 text-ink flex items-center justify-center text-xl transition-colors duration-300 group-hover:bg-accent group-hover:text-white">✉</div>
+        <h2 class="font-display font-semibold text-lg mb-2">Email Us</h2>
         <p class="text-muted text-sm">Send us a question or a story. <span class="italic">(link coming soon)</span></p>
       </a>
       <!-- TODO: replace with a real Instagram/KakaoTalk channel link -->
-      <a href="#" class="group reveal bg-panel rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.06s">
-        <div class="w-12 h-12 mx-auto mb-5 rounded-xl bg-accent/15 text-accent flex items-center justify-center text-xl transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">◎</div>
-        <h2 class="font-extrabold text-lg mb-2">Follow the Community</h2>
+      <a href="#" class="group reveal bg-panel rounded-[1.75rem] p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.06s">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-accent2/60 text-ink flex items-center justify-center text-xl transition-colors duration-300 group-hover:bg-accent group-hover:text-white">◎</div>
+        <h2 class="font-display font-semibold text-lg mb-2">Follow the Community</h2>
         <p class="text-muted text-sm">Instagram &amp; KakaoTalk. <span class="italic">(link coming soon)</span></p>
       </a>
       <!-- TODO: replace with a real survey / intake form link (part of the Survey & Awareness service) -->
-      <a href="#" class="group reveal bg-panel rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.12s">
-        <div class="w-12 h-12 mx-auto mb-5 rounded-xl bg-accent/15 text-accent flex items-center justify-center text-xl transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">✎</div>
-        <h2 class="font-extrabold text-lg mb-2">Share Your Story</h2>
+      <a href="#" class="group reveal bg-panel rounded-[1.75rem] p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.12s">
+        <div class="w-12 h-12 mx-auto mb-5 rounded-2xl bg-accent2/60 text-ink flex items-center justify-center text-xl transition-colors duration-300 group-hover:bg-accent group-hover:text-white">✎</div>
+        <h2 class="font-display font-semibold text-lg mb-2">Share Your Story</h2>
         <p class="text-muted text-sm">Help shape what we publish next. <span class="italic">(link coming soon)</span></p>
       </a>
     </section>
 
     <!-- ══════════════ NOTE ══════════════ -->
     <section class="max-w-3xl mx-auto px-6 pb-28 reveal">
-      <div class="bg-panel rounded-2xl p-8 md:p-10 text-center border-l-4 border-accent">
+      <div class="bg-panel rounded-[1.75rem] p-8 md:p-10 text-center shadow-sm border-l-4 border-accent">
         <p class="text-lg text-muted">
           ExpatCompass is a knowledge base and discussion space, not a law firm. If your situation
           needs legal representation, we can connect you to our vetted
@@ -123,10 +126,10 @@
   </main>
 
   <!-- ══════════════ FOOTER ══════════════ -->
-  <footer class="px-6 py-14 text-sm text-muted border-t border-white/10">
+  <footer class="px-6 py-14 text-sm text-muted border-t border-black/10">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
       <div class="max-w-sm">
-        <div class="flex items-center gap-2 font-extrabold text-lg text-ink mb-3">
+        <div class="flex items-center gap-2 font-display font-semibold text-lg text-ink mb-3">
           <img src="assets/logo.png" alt="ExpatCompass logo" width="22" height="22" class="h-5 w-5 rounded-full" loading="lazy" />
           ExpatCompass
         </div>
@@ -150,7 +153,7 @@
         </div>
       </div>
     </div>
-    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
+    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-black/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
   </footer>
 
   <script>
@@ -173,10 +176,9 @@
         const pct = h.scrollHeight > h.clientHeight ? (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 : 0;
         progress.style.width = pct + '%';
         const scrolled = h.scrollTop > 40;
-        header.classList.toggle('shadow-lg', scrolled);
-        header.classList.toggle('shadow-black/20', scrolled);
+        header.classList.toggle('shadow-sm', scrolled);
         header.classList.toggle('border-b', scrolled);
-        header.classList.toggle('border-white/10', scrolled);
+        header.classList.toggle('border-black/10', scrolled);
       };
       document.addEventListener('scroll', onScroll, { passive: true });
       onScroll();

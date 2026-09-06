@@ -11,22 +11,25 @@
   <link rel="icon" href="assets/logo.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            canvas: '#12151B',
-            panel:  '#1A1F27',
-            ink:    '#F3F1EA',
-            muted:  '#98A0AC',
-            accent: '#D9A94A',
+            canvas: '#FFF9F6',
+            panel:  '#FFFFFF',
+            ink:    '#0F151D',
+            muted:  '#5B6472',
+            accent: '#FF7448',
+            accent2: '#D3E1FF',
           },
           fontFamily: {
-            sans: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Fredoka', 'Inter', 'system-ui', 'sans-serif'],
           },
         },
       },
@@ -34,7 +37,7 @@
   </script>
 
   <style>
-    body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
     .reveal { opacity: 0; transform: translateY(28px) scale(.98); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
@@ -47,10 +50,6 @@
     .blob-float { animation: blobfloat 16s ease-in-out infinite; }
     @keyframes blobfloat { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(24px,-34px) scale(1.08); } }
     @media (prefers-reduced-motion: reduce) { .blob-float { animation: none; } }
-
-    .kenburns { animation: kenburns 22s ease-in-out infinite alternate; }
-    @keyframes kenburns { from { transform: scale(1.06); } to { transform: scale(1.16); } }
-    @media (prefers-reduced-motion: reduce) { .kenburns { animation: none; } }
 
     .marquee-track { width: max-content; animation: marquee 30s linear infinite; }
     @keyframes marquee { to { transform: translateX(-50%); } }
@@ -68,17 +67,17 @@
   <div id="progress" class="fixed top-0 left-0 h-[3px] bg-accent z-[60]" style="width:0%"></div>
 
   <!-- ══════════════ NAV ══════════════ -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm transition-shadow duration-300">
+  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/85 backdrop-blur-sm transition-shadow duration-300">
     <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2.5 font-extrabold text-lg tracking-tight">
+      <a href="index.html" class="flex items-center gap-2.5 font-display font-semibold text-lg tracking-tight">
         <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
         ExpatCompass
       </a>
 
       <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-        <li><a href="about.html" class="link-underline text-ink/80 hover:text-ink [&[aria-current]]:text-accent">About</a></li>
-        <li><a href="services.html" class="link-underline text-ink/80 hover:text-ink [&[aria-current]]:text-accent">Services</a></li>
-        <li><a href="contact.html" class="inline-flex items-center bg-accent text-canvas font-bold text-sm rounded-xl px-5 py-2.5 transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5">Contact</a></li>
+        <li><a href="about.html" class="link-underline text-ink/70 hover:text-ink [&[aria-current]]:text-accent">About</a></li>
+        <li><a href="services.html" class="link-underline text-ink/70 hover:text-ink [&[aria-current]]:text-accent">Services</a></li>
+        <li><a href="contact.html" class="inline-flex items-center bg-accent text-white font-semibold text-sm rounded-full px-5 py-2.5 transition-all duration-300 hover:brightness-105 hover:-translate-y-0.5">Contact</a></li>
       </ul>
 
       <button id="nav-toggle" class="md:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
@@ -86,42 +85,45 @@
       </button>
     </nav>
 
-    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-white/10">
+    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-black/10">
       <a href="about.html"    class="block py-2.5 font-medium [&[aria-current]]:text-accent">About</a>
       <a href="services.html" class="block py-2.5 font-medium [&[aria-current]]:text-accent">Services</a>
       <a href="contact.html"  class="block py-2.5 font-medium text-accent">Contact →</a>
     </div>
   </header>
 
-  <main>
-    <!-- ══════════════ HERO (full-bleed photo, parallax) ══════════════ -->
-    <section class="relative h-screen min-h-[640px] flex items-end overflow-hidden">
-      <div class="absolute -inset-y-16 inset-x-0 overflow-hidden" data-parallax="50">
-        <img src="assets/hero-bukchon.jpg" alt="Bukchon Hanok Village rooftops in Seoul at golden hour"
-             class="kenburns w-full h-full object-cover" />
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-canvas via-canvas/55 to-canvas/10"></div>
-      <div class="relative max-w-6xl mx-auto px-6 pb-20 md:pb-28 w-full">
-        <p class="reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-5" style="transition-delay:.05s">Seoul · Connect · Explore</p>
-        <h1 class="reveal font-extrabold text-ink text-5xl sm:text-6xl md:text-8xl tracking-tight leading-[0.95] max-w-4xl mb-8" style="transition-delay:.15s">
-          Find your way in Korea, together.
-        </h1>
-        <p class="reveal text-muted text-lg md:text-xl max-w-xl mb-10" style="transition-delay:.3s">
-          The community-built guide for navigating visas, work, housing, and everyday life as a
-          foreigner in Korea — real answers from people who've been there.
-        </p>
-        <div class="reveal" style="transition-delay:.45s">
-          <a href="services.html" class="group inline-flex items-center gap-2 bg-accent text-canvas font-bold rounded-xl px-8 py-3.5 transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5">
-            See what we do
-            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
+  <!-- ══════════════ HERO (text-first, cream bg) ══════════════ -->
+  <section class="relative max-w-4xl mx-auto px-6 pt-40 pb-16 text-center overflow-hidden">
+    <div class="blob blob-float w-96 h-96 bg-accent/20 -top-20 -left-20"></div>
+    <div class="blob blob-float w-72 h-72 bg-accent2/40 top-10 -right-10"></div>
+    <p class="relative reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-5" style="transition-delay:.05s">Seoul · Connect · Explore</p>
+    <h1 class="relative reveal font-display font-semibold text-ink text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[1.05] mb-8" style="transition-delay:.15s">
+      Find your way in Korea, together.
+    </h1>
+    <p class="relative reveal text-muted text-lg md:text-xl max-w-xl mx-auto mb-10" style="transition-delay:.3s">
+      The community-built guide for navigating visas, work, housing, and everyday life as a
+      foreigner in Korea — real answers from people who've been there.
+    </p>
+    <div class="relative reveal" style="transition-delay:.45s">
+      <a href="services.html" class="group inline-flex items-center gap-2 bg-accent text-white font-semibold rounded-full px-8 py-3.5 transition-all duration-300 hover:brightness-105 hover:-translate-y-0.5">
+        See what we do
+        <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
+  </section>
 
+  <!-- ══════════════ HERO VISUAL (big rounded photo) ══════════════ -->
+  <section class="max-w-6xl mx-auto px-6 pb-20 reveal">
+    <div class="overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-sm">
+      <img src="assets/hero-bukchon.jpg" alt="Bukchon Hanok Village rooftops in Seoul at golden hour"
+           class="w-full h-[46vh] md:h-[60vh] object-cover transition-transform duration-700 ease-out hover:scale-105" />
+    </div>
+  </section>
+
+  <main>
     <!-- ══════════════ MARQUEE ══════════════ -->
-    <div class="relative border-b border-white/10 py-5 overflow-hidden reveal">
-      <div class="marquee-track flex whitespace-nowrap font-extrabold text-lg md:text-xl tracking-tight text-ink/60 uppercase">
+    <div class="relative border-y border-black/10 py-5 overflow-hidden reveal">
+      <div class="marquee-track flex whitespace-nowrap font-display font-medium text-lg md:text-xl tracking-tight text-ink/70 uppercase">
         <span class="flex items-center gap-8 pr-8">
           Visa Renewals <span class="text-accent">●</span> Workplace Rights <span class="text-accent">●</span> Housing <span class="text-accent">●</span> Healthcare <span class="text-accent">●</span> Community Stories <span class="text-accent">●</span>
         </span>
@@ -132,83 +134,82 @@
     </div>
 
     <!-- ══════════════ WHO WE ARE (statement) ══════════════ -->
-    <section class="relative max-w-4xl mx-auto px-6 py-28 md:py-32 text-center overflow-hidden">
-      <div class="blob blob-float w-80 h-80 bg-accent/25 -top-10 -left-10"></div>
-      <p class="relative reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6">Who We Are</p>
-      <p class="relative font-extrabold text-3xl md:text-5xl leading-[1.1] tracking-tight reveal" style="transition-delay:.1s">
+    <section class="max-w-4xl mx-auto px-6 py-28 md:py-32 text-center">
+      <p class="reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6">Who We Are</p>
+      <p class="font-display font-medium text-3xl md:text-5xl leading-[1.15] tracking-tight reveal" style="transition-delay:.1s">
         So much of what you need to know as a foreigner in Korea is scattered — outdated blog posts,
         hearsay in group chats, Korean-only government pages. We bring it into
         <span class="text-accent">one place</span>, built by the community that's lived it.
       </p>
-      <a href="about.html" class="relative reveal link-underline inline-block mt-8 font-semibold text-ink" style="transition-delay:.2s">Read our full story →</a>
+      <a href="about.html" class="reveal link-underline inline-block mt-8 font-semibold text-ink" style="transition-delay:.2s">Read our full story →</a>
     </section>
 
     <!-- ══════════════ WHY EXPATCOMPASS (benefits strip) ══════════════ -->
     <section class="max-w-6xl mx-auto px-6 pb-24">
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="reveal bg-panel rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30">
-          <p class="font-extrabold text-lg mb-1.5">Community-Driven</p>
+        <div class="reveal bg-panel rounded-[1.75rem] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+          <p class="font-display font-semibold text-lg mb-1.5">Community-Driven</p>
           <p class="text-muted text-sm">Shaped by real cases from people who've actually lived it.</p>
         </div>
-        <div class="reveal bg-panel rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.05s">
-          <p class="font-extrabold text-lg mb-1.5">Always Current</p>
+        <div class="reveal bg-panel rounded-[1.75rem] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.05s">
+          <p class="font-display font-semibold text-lg mb-1.5">Always Current</p>
           <p class="text-muted text-sm">Ongoing outreach keeps us aligned with what's actually changing.</p>
         </div>
-        <div class="reveal bg-panel rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.1s">
-          <p class="font-extrabold text-lg mb-1.5">Vetted Network</p>
+        <div class="reveal bg-panel rounded-[1.75rem] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.1s">
+          <p class="font-display font-semibold text-lg mb-1.5">Vetted Network</p>
           <p class="text-muted text-sm">Warm handoffs to trusted lawyers, specialists, and housing help.</p>
         </div>
-        <div class="reveal bg-panel rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.15s">
-          <p class="font-extrabold text-lg mb-1.5">No Sales Pitch</p>
+        <div class="reveal bg-panel rounded-[1.75rem] p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.15s">
+          <p class="font-display font-semibold text-lg mb-1.5">No Sales Pitch</p>
           <p class="text-muted text-sm">A knowledge base, not a law firm or a lead-gen funnel.</p>
         </div>
       </div>
     </section>
 
     <!-- ══════════════ SERVICES (card grid) ══════════════ -->
-    <section class="max-w-6xl mx-auto px-6 py-20 border-t border-white/10">
+    <section class="max-w-6xl mx-auto px-6 py-20 border-t border-black/10">
       <div class="mb-14 reveal">
         <p class="text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">What We Do</p>
-        <h2 class="font-extrabold text-3xl md:text-5xl tracking-tight">Four ways we show up for you</h2>
+        <h2 class="font-display font-semibold text-3xl md:text-5xl tracking-tight">Four ways we show up for you</h2>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-6">
-        <a href="services.html#survey" class="group reveal relative bg-panel rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30">
-          <span class="inline-flex w-11 h-11 rounded-xl bg-accent/15 text-accent font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">01</span>
-          <h3 class="text-xl md:text-2xl font-extrabold mb-3">Survey &amp; Awareness</h3>
+        <a href="services.html#survey" class="group reveal relative bg-panel rounded-[1.75rem] p-8 md:p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+          <span class="inline-flex w-11 h-11 rounded-2xl bg-accent2/60 text-ink font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-white">01</span>
+          <h3 class="text-xl md:text-2xl font-display font-semibold mb-3">Survey &amp; Awareness</h3>
           <p class="text-muted mb-6">We collect real stories from the community and turn them into content that reaches further.</p>
           <span class="link-underline text-accent font-semibold inline-flex items-center gap-1">Learn more <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
         </a>
-        <a href="services.html#guidance" class="group reveal relative bg-panel rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.06s">
-          <span class="inline-flex w-11 h-11 rounded-xl bg-accent/15 text-accent font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">02</span>
-          <h3 class="text-xl md:text-2xl font-extrabold mb-3">Guidance &amp; Counselling</h3>
+        <a href="services.html#guidance" class="group reveal relative bg-panel rounded-[1.75rem] p-8 md:p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.06s">
+          <span class="inline-flex w-11 h-11 rounded-2xl bg-accent2/60 text-ink font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-white">02</span>
+          <h3 class="text-xl md:text-2xl font-display font-semibold mb-3">Guidance &amp; Counselling</h3>
           <p class="text-muted mb-6">Simple, practical direction on visas, work, and daily life — from people who've been there.</p>
           <span class="link-underline text-accent font-semibold inline-flex items-center gap-1">Learn more <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
         </a>
-        <a href="services.html#referral" class="group reveal relative bg-panel rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.12s">
-          <span class="inline-flex w-11 h-11 rounded-xl bg-accent/15 text-accent font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">03</span>
-          <h3 class="text-xl md:text-2xl font-extrabold mb-3">Referral &amp; Connection</h3>
+        <a href="services.html#referral" class="group reveal relative bg-panel rounded-[1.75rem] p-8 md:p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.12s">
+          <span class="inline-flex w-11 h-11 rounded-2xl bg-accent2/60 text-ink font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-white">03</span>
+          <h3 class="text-xl md:text-2xl font-display font-semibold mb-3">Referral &amp; Connection</h3>
           <p class="text-muted mb-6">Warm handoffs to vetted lawyers, immigration specialists, and housing help.</p>
           <span class="link-underline text-accent font-semibold inline-flex items-center gap-1">Learn more <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
         </a>
-        <a href="services.html#community" class="group reveal relative bg-panel rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/30" style="transition-delay:.18s">
-          <span class="inline-flex w-11 h-11 rounded-xl bg-accent/15 text-accent font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">04</span>
-          <h3 class="text-xl md:text-2xl font-extrabold mb-3">Community &amp; Workshops</h3>
+        <a href="services.html#community" class="group reveal relative bg-panel rounded-[1.75rem] p-8 md:p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="transition-delay:.18s">
+          <span class="inline-flex w-11 h-11 rounded-2xl bg-accent2/60 text-ink font-bold items-center justify-center mb-6 transition-colors duration-300 group-hover:bg-accent group-hover:text-white">04</span>
+          <h3 class="text-xl md:text-2xl font-display font-semibold mb-3">Community &amp; Workshops</h3>
           <p class="text-muted mb-6">Meetups, workshops, and onboarding packets that bring people together.</p>
           <span class="link-underline text-accent font-semibold inline-flex items-center gap-1">Learn more <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
         </a>
       </div>
     </section>
 
-    <!-- ══════════════ PHOTO BREAK (parallax) ══════════════ -->
-    <section class="relative h-[60vh] min-h-[420px] overflow-hidden reveal">
+    <!-- ══════════════ PHOTO BREAK (moody band, parallax) ══════════════ -->
+    <section class="relative h-[55vh] min-h-[380px] overflow-hidden reveal">
       <div class="absolute -inset-y-16 inset-x-0 overflow-hidden" data-parallax="35">
         <img src="assets/namsan-dusk.jpg" alt="N Seoul Tower on Namsan mountain at dusk with the city skyline below"
              loading="lazy" class="w-full h-full object-cover" />
       </div>
-      <div class="absolute inset-0 bg-canvas/60"></div>
+      <div class="absolute inset-0 bg-ink/45"></div>
       <div class="relative h-full flex items-center justify-center px-6 text-center">
-        <p class="font-extrabold text-ink text-2xl md:text-4xl tracking-tight max-w-2xl">"Seoul, for the people who are just starting to call it home."</p>
+        <p class="font-display font-medium text-white text-2xl md:text-4xl tracking-tight max-w-2xl">"Seoul, for the people who are just starting to call it home."</p>
       </div>
     </section>
 
@@ -216,32 +217,32 @@
     <section class="max-w-3xl mx-auto px-6 py-24">
       <div class="mb-12 reveal">
         <p class="text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
-        <h2 class="font-extrabold text-3xl md:text-5xl tracking-tight">Good to know</h2>
+        <h2 class="font-display font-semibold text-3xl md:text-5xl tracking-tight">Good to know</h2>
       </div>
 
-      <details class="group reveal border-t border-white/10 py-6">
-        <summary class="flex items-center justify-between gap-6 cursor-pointer font-bold text-lg md:text-xl">
+      <details class="group reveal border-t border-black/10 py-6">
+        <summary class="flex items-center justify-between gap-6 cursor-pointer font-semibold text-lg md:text-xl">
           Is ExpatCompass a law firm or a government service?
           <span class="shrink-0 text-accent text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
         </summary>
         <p class="text-muted mt-4 max-w-2xl">No. We're a knowledge base and discussion space built by and for the foreign community in Korea — not a law firm, advocacy group, or government body.</p>
       </details>
-      <details class="group reveal border-t border-white/10 py-6" style="transition-delay:.05s">
-        <summary class="flex items-center justify-between gap-6 cursor-pointer font-bold text-lg md:text-xl">
+      <details class="group reveal border-t border-black/10 py-6" style="transition-delay:.05s">
+        <summary class="flex items-center justify-between gap-6 cursor-pointer font-semibold text-lg md:text-xl">
           Where does the information come from?
           <span class="shrink-0 text-accent text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
         </summary>
         <p class="text-muted mt-4 max-w-2xl">From the community itself — foreigners who've been through a visa dispute, a workplace conflict, or a housing headache — supplemented with vetted legal and procedural information, plus ongoing surveys and interviews across Korea.</p>
       </details>
-      <details class="group reveal border-t border-white/10 py-6" style="transition-delay:.1s">
-        <summary class="flex items-center justify-between gap-6 cursor-pointer font-bold text-lg md:text-xl">
+      <details class="group reveal border-t border-black/10 py-6" style="transition-delay:.1s">
+        <summary class="flex items-center justify-between gap-6 cursor-pointer font-semibold text-lg md:text-xl">
           What if my situation needs a lawyer or specialist?
           <span class="shrink-0 text-accent text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
         </summary>
         <p class="text-muted mt-4 max-w-2xl">We connect you to our vetted referral network — trusted contacts in hospitals, immigration, legal, and housing — as a bridge, not an endpoint.</p>
       </details>
-      <details class="group reveal border-t border-b border-white/10 py-6" style="transition-delay:.15s">
-        <summary class="flex items-center justify-between gap-6 cursor-pointer font-bold text-lg md:text-xl">
+      <details class="group reveal border-t border-b border-black/10 py-6" style="transition-delay:.15s">
+        <summary class="flex items-center justify-between gap-6 cursor-pointer font-semibold text-lg md:text-xl">
           Can I share my own experience?
           <span class="shrink-0 text-accent text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
         </summary>
@@ -251,15 +252,15 @@
 
     <!-- ══════════════ CTA ══════════════ -->
     <section class="relative max-w-3xl mx-auto px-6 py-28 md:py-32 text-center overflow-hidden">
-      <div class="blob blob-float w-72 h-72 bg-accent/20 top-0 right-0"></div>
-      <p class="relative font-extrabold text-xl md:text-2xl tracking-tight mb-4 reveal text-ink/80">You bring the questions.<br class="hidden md:block" /> We bring the community that's already answered them.</p>
-      <h2 class="relative font-extrabold text-3xl md:text-5xl tracking-tight mb-6 reveal" style="transition-delay:.06s">Have a story to share? Need a hand?</h2>
+      <div class="blob blob-float w-72 h-72 bg-accent2/40 top-0 right-0"></div>
+      <p class="relative font-display font-medium text-xl md:text-2xl tracking-tight mb-4 reveal text-ink/70">You bring the questions.<br class="hidden md:block" /> We bring the community that's already answered them.</p>
+      <h2 class="relative font-display font-semibold text-3xl md:text-5xl tracking-tight mb-6 reveal" style="transition-delay:.06s">Have a story to share? Need a hand?</h2>
       <p class="relative text-muted text-lg mb-9 reveal" style="transition-delay:.12s">
         Whether you're figuring out your first visa renewal or you've been here for years and want
         to give back, there's a place for you at ExpatCompass.
       </p>
       <div class="relative reveal" style="transition-delay:.18s">
-        <a href="contact.html" class="group inline-flex items-center gap-2 bg-accent text-canvas font-bold rounded-xl px-8 py-3.5 transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5">
+        <a href="contact.html" class="group inline-flex items-center gap-2 bg-accent text-white font-semibold rounded-full px-8 py-3.5 transition-all duration-300 hover:brightness-105 hover:-translate-y-0.5">
           Get in touch
           <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
         </a>
@@ -268,10 +269,10 @@
   </main>
 
   <!-- ══════════════ FOOTER ══════════════ -->
-  <footer class="px-6 py-14 text-sm text-muted border-t border-white/10">
+  <footer class="px-6 py-14 text-sm text-muted border-t border-black/10">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
       <div class="max-w-sm">
-        <div class="flex items-center gap-2 font-extrabold text-lg text-ink mb-3">
+        <div class="flex items-center gap-2 font-display font-semibold text-lg text-ink mb-3">
           <img src="assets/logo.png" alt="ExpatCompass logo" width="22" height="22" class="h-5 w-5 rounded-full" loading="lazy" />
           ExpatCompass
         </div>
@@ -295,7 +296,7 @@
         </div>
       </div>
     </div>
-    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
+    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-black/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
   </footer>
 
   <script>
@@ -318,10 +319,9 @@
         const pct = h.scrollHeight > h.clientHeight ? (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 : 0;
         progress.style.width = pct + '%';
         const scrolled = h.scrollTop > 40;
-        header.classList.toggle('shadow-lg', scrolled);
-        header.classList.toggle('shadow-black/20', scrolled);
+        header.classList.toggle('shadow-sm', scrolled);
         header.classList.toggle('border-b', scrolled);
-        header.classList.toggle('border-white/10', scrolled);
+        header.classList.toggle('border-black/10', scrolled);
       };
       document.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
