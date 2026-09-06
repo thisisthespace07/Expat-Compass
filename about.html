@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — ExpatCompass</title>
+  <meta name="description" content="Who ExpatCompass is, and the vision and mission behind the community-built guide for foreigners living in Korea." />
+  <meta property="og:title" content="About — ExpatCompass" />
+  <meta property="og:description" content="Built by expats, for expats — the story behind ExpatCompass." />
+  <meta property="og:image" content="assets/hero-bukchon.jpg" />
+  <link rel="icon" href="assets/logo.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#F6F1E7',
+            panel:  '#FFFFFF',
+            ink:    '#26221C',
+            muted:  '#7A7266',
+            accent: '#9C7A3E',
+          },
+          fontFamily: {
+            sans:  ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+            serif: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
+
+    .link-underline { position: relative; }
+    .link-underline::after { content:''; position:absolute; left:0; bottom:-2px; width:100%; height:1px; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .35s ease; }
+    .link-underline:hover::after { transform:scaleX(1); transform-origin:left; }
+
+    .blob { position:absolute; border-radius:9999px; filter: blur(70px); pointer-events:none; }
+    .blob-float { animation: blobfloat 16s ease-in-out infinite; }
+    @keyframes blobfloat { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(24px,-34px) scale(1.06); } }
+    @media (prefers-reduced-motion: reduce) { .blob-float { animation: none; } }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm">
+    <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight">
+        <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
+        ExpatCompass
+      </a>
+
+      <ul class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+        <li><a href="about.html" class="link-underline [&[aria-current]]:text-accent">About</a></li>
+        <li><a href="services.html" class="link-underline [&[aria-current]]:text-accent">Services</a></li>
+        <li><a href="contact.html" class="link-underline [&[aria-current]]:text-accent">Contact</a></li>
+      </ul>
+
+      <button id="nav-toggle" class="md:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+
+    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-ink/10">
+      <a href="about.html"    class="block py-2.5 font-medium [&[aria-current]]:text-accent">About</a>
+      <a href="services.html" class="block py-2.5 font-medium [&[aria-current]]:text-accent">Services</a>
+      <a href="contact.html"  class="block py-2.5 font-medium text-accent">Contact →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="max-w-4xl mx-auto px-6 pt-40 pb-16 reveal">
+      <p class="text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">About Us</p>
+      <h1 class="font-serif text-4xl md:text-6xl leading-[1.05]">Who We Are</h1>
+    </section>
+
+    <!-- ══════════════ STORY + IMAGE ══════════════ -->
+    <section class="max-w-6xl mx-auto px-6 pb-24 grid md:grid-cols-[1.1fr,0.9fr] gap-12 items-start">
+      <div class="space-y-6 text-lg text-muted reveal">
+        <p>
+          So much of what you need to know as a foreigner living in Korea — how to handle a visa
+          renewal, what to do if an employer withholds pay, how labor law actually applies to you —
+          is scattered across outdated blog posts, hearsay in group chats, or buried in Korean-only
+          government pages. <span class="font-serif text-ink italic">ExpatCompass brings it into one place.</span>
+        </p>
+        <p>
+          Our content is shaped by the community itself. Foreigners who've already been through a
+          visa dispute, a workplace conflict, or a housing headache share what they learned — what
+          worked and what didn't. We supplement these firsthand accounts with vetted legal and
+          procedural information, so you get clear, practical answers, not just sympathy.
+        </p>
+        <p>
+          We don't just wait for people to come to us. We actively reach out to foreign communities
+          across Korea — through surveys, interviews, and on-the-ground conversations — to collect
+          real cases and experiences, and to catch gaps early as visa policies, labor conditions,
+          and the expat community change over time.
+        </p>
+      </div>
+      <img src="assets/namsan-dusk.jpg" alt="N Seoul Tower on Namsan mountain at dusk with the city skyline below"
+           loading="lazy" class="reveal w-full h-full object-cover rounded-sm md:sticky md:top-28 aspect-[4/5]" />
+    </section>
+
+    <!-- ══════════════ HONESTY CALLOUT ══════════════ -->
+    <section class="max-w-4xl mx-auto px-6 pb-24 reveal">
+      <div class="border-l-2 border-accent pl-8 py-2">
+        <p class="font-serif text-xl md:text-2xl mb-2">Not a law firm. Not an advocacy group. Not the government.</p>
+        <p class="text-muted">
+          We are a knowledge base and discussion space, built by and for the foreign community in
+          Korea. When a situation needs more than guidance, we connect you to our
+          <a href="services.html#referral" class="link-underline text-ink font-medium">vetted referral network</a> instead.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════ VISION & MISSION ══════════════ -->
+    <section class="relative max-w-5xl mx-auto px-6 pb-28 overflow-hidden">
+      <div class="blob blob-float w-72 h-72 bg-accent/15 top-10 -right-16"></div>
+      <div class="relative text-center max-w-2xl mx-auto mb-16 reveal">
+        <p class="text-accent text-xs font-medium tracking-[0.25em] uppercase mb-4">Vision &amp; Mission</p>
+        <h2 class="font-serif text-3xl md:text-5xl">Where we're headed, and how we get there</h2>
+      </div>
+      <div class="relative grid md:grid-cols-2 gap-12 md:gap-16">
+        <div class="reveal md:border-r md:border-ink/10 md:pr-16">
+          <h3 class="font-serif text-2xl mb-4">Vision</h3>
+          <p class="text-lg leading-relaxed text-muted">
+            To deeply understand the real challenges foreigners face living in Korea — from visas
+            to workplace rights to daily life — and use that understanding to build the definitive
+            one-stop platform where any foreigner can find clear, reliable, and relevant information.
+          </p>
+        </div>
+        <div class="reveal">
+          <h3 class="font-serif text-2xl mb-4">Mission</h3>
+          <p class="text-lg leading-relaxed text-muted">
+            To create an open, community-driven platform where foreigners in Korea can share
+            experiences, ask questions, and access clear, practical information on visas,
+            employment rights, and daily life — evolving alongside the real, changing needs of
+            the expat community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CTA ══════════════ -->
+    <section class="max-w-4xl mx-auto px-6 pb-28 text-center reveal">
+      <a href="services.html" class="inline-flex items-center gap-2 border border-ink rounded-full px-7 py-3 font-medium hover:bg-ink hover:text-canvas transition-colors duration-300">
+        See how we help <span>→</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="px-6 py-14 text-sm text-muted border-t border-ink/10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2 font-serif text-lg text-ink mb-3">
+          <img src="assets/logo.png" alt="ExpatCompass logo" width="22" height="22" class="h-5 w-5 rounded-full" loading="lazy" />
+          ExpatCompass
+        </div>
+        <p>A knowledge base and discussion space — not a law firm, advocacy group, or government body.</p>
+      </div>
+      <div class="flex gap-16">
+        <div>
+          <p class="font-medium text-ink mb-3 text-xs tracking-[0.2em] uppercase">Site</p>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="link-underline">About</a></li>
+            <li><a href="services.html" class="link-underline">Services</a></li>
+            <li><a href="contact.html" class="link-underline">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-medium text-ink mb-3 text-xs tracking-[0.2em] uppercase">Contact</p>
+          <ul class="space-y-2">
+            <li><!-- TODO: add real contact email --><a href="#" class="link-underline">Email us</a></li>
+            <li><!-- TODO: add real Instagram/KakaoTalk link --><a href="#" class="link-underline">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-ink/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const here = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('header a[href]').forEach(a => {
+        if (a.getAttribute('href').split('#')[0] === here) a.setAttribute('aria-current', 'page');
+      });
+      const btn = document.getElementById('nav-toggle'), menu = document.getElementById('nav-mobile');
+      btn.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden') === false;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>

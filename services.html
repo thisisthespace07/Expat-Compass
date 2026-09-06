@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — ExpatCompass</title>
+  <meta name="description" content="Four ways ExpatCompass supports foreigners in Korea: surveys & awareness, guidance & counselling, referrals, and community workshops." />
+  <meta property="og:title" content="Services — ExpatCompass" />
+  <meta property="og:description" content="Four ways we show up for you." />
+  <meta property="og:image" content="assets/hero-bukchon.jpg" />
+  <link rel="icon" href="assets/logo.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#F6F1E7',
+            panel:  '#FFFFFF',
+            ink:    '#26221C',
+            muted:  '#7A7266',
+            accent: '#9C7A3E',
+          },
+          fontFamily: {
+            sans:  ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+            serif: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
+
+    .link-underline { position: relative; }
+    .link-underline::after { content:''; position:absolute; left:0; bottom:-2px; width:100%; height:1px; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .35s ease; }
+    .link-underline:hover::after { transform:scaleX(1); transform-origin:left; }
+  </style>
+</head>
+<body class="bg-canvas text-ink antialiased">
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm">
+    <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight">
+        <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
+        ExpatCompass
+      </a>
+
+      <ul class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
+        <li><a href="about.html" class="link-underline [&[aria-current]]:text-accent">About</a></li>
+        <li><a href="services.html" class="link-underline [&[aria-current]]:text-accent">Services</a></li>
+        <li><a href="contact.html" class="link-underline [&[aria-current]]:text-accent">Contact</a></li>
+      </ul>
+
+      <button id="nav-toggle" class="md:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+
+    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-ink/10">
+      <a href="about.html"    class="block py-2.5 font-medium [&[aria-current]]:text-accent">About</a>
+      <a href="services.html" class="block py-2.5 font-medium [&[aria-current]]:text-accent">Services</a>
+      <a href="contact.html"  class="block py-2.5 font-medium text-accent">Contact →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="max-w-3xl mx-auto px-6 pt-40 pb-20 reveal">
+      <p class="text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">What We Do</p>
+      <h1 class="font-serif text-4xl md:text-6xl leading-[1.05] mb-6">Four ways we show up for you</h1>
+      <p class="text-lg text-muted">From spotting patterns across the community to connecting you with the right person, here's how ExpatCompass works.</p>
+    </section>
+
+    <!-- ══════════════ SERVICE 01 ══════════════ -->
+    <section id="survey" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
+      <span class="font-serif text-5xl text-accent/40">01</span>
+      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Survey &amp; Awareness Service</h2>
+      <p class="text-muted text-lg mb-6 max-w-2xl">Collects real experiences and data from the foreigner community, then turns those findings into content that spreads awareness beyond ExpatCompass itself.</p>
+      <dl class="space-y-4 max-w-2xl">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Community surveys</dt>
+          <dd class="text-muted">Ongoing collection of real cases and challenges from foreigners across Korea.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Awareness content</dt>
+          <dd class="text-muted">Findings shaped into podcasts, events, reports, or social content that reach a wider audience.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Feedback loop</dt>
+          <dd class="text-muted">What people share becomes what others learn from, building our public voice and credibility.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ══════════════ SERVICE 02 ══════════════ -->
+    <section id="guidance" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
+      <span class="font-serif text-5xl text-accent/40">02</span>
+      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Basic Guidance &amp; Counselling</h2>
+      <p class="text-muted text-lg mb-6 max-w-2xl">Simple, practical direction on common situations — without acting as a law firm or caseworker.</p>
+      <dl class="space-y-4 max-w-2xl">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Visa &amp; status guidance</dt>
+          <dd class="text-muted">Informed direction on options like staying in Korea after graduation, visa transitions, or renewals.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Peer-informed answers</dt>
+          <dd class="text-muted">Guidance shaped by what others in similar situations have actually done.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Clear next steps</dt>
+          <dd class="text-muted">Pointing you toward what to look into or do next, not just sympathy.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ══════════════ SERVICE 03 ══════════════ -->
+    <section id="referral" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
+      <span class="font-serif text-5xl text-accent/40">03</span>
+      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Referral &amp; Connection Service</h2>
+      <p class="text-muted text-lg mb-6 max-w-2xl">Connects you directly to trusted contacts when your situation needs more than guidance.</p>
+      <dl class="space-y-4 max-w-2xl">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Vetted network</dt>
+          <dd class="text-muted">Trusted contacts in hospitals, visa/immigration specialists, lawyers, and housing help.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Direct connections</dt>
+          <dd class="text-muted">Warm handoffs to the right person, not just a generic list.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Bridge, not endpoint</dt>
+          <dd class="text-muted">We get you to the right help rather than trying to be it.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ══════════════ SERVICE 04 ══════════════ -->
+    <section id="community" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
+      <span class="font-serif text-5xl text-accent/40">04</span>
+      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Community Building &amp; Workshops</h2>
+      <p class="text-muted text-lg mb-6 max-w-2xl">Ongoing touchpoints that bring people together and equip them with what they need — before problems even arise, not just after.</p>
+      <dl class="space-y-4 max-w-2xl">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Workshops &amp; info sessions</dt>
+          <dd class="text-muted">Visa renewal clinics, "know your rights" briefings, practical how-tos — in person or online.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Onboarding packets</dt>
+          <dd class="text-muted">A starter guide for newly arrived foreigners covering visa, housing, healthcare, and banking basics.</dd>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+          <dt class="font-medium shrink-0 sm:w-48">Community meetups</dt>
+          <dd class="text-muted">Casual touchpoints where survey participants and people we've helped can reconnect and become contributors themselves.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ══════════════ CTA ══════════════ -->
+    <section class="max-w-3xl mx-auto px-6 py-28 text-center border-t border-ink/10 reveal">
+      <h2 class="font-serif text-3xl md:text-5xl mb-6">Ready to connect?</h2>
+      <p class="text-muted text-lg mb-9 max-w-xl mx-auto">Reach out and we'll point you toward the right service.</p>
+      <a href="contact.html" class="inline-flex items-center gap-2 border border-ink rounded-full px-7 py-3 font-medium hover:bg-ink hover:text-canvas transition-colors duration-300">
+        Reach out <span>→</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="px-6 py-14 text-sm text-muted border-t border-ink/10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2 font-serif text-lg text-ink mb-3">
+          <img src="assets/logo.png" alt="ExpatCompass logo" width="22" height="22" class="h-5 w-5 rounded-full" loading="lazy" />
+          ExpatCompass
+        </div>
+        <p>A knowledge base and discussion space — not a law firm, advocacy group, or government body.</p>
+      </div>
+      <div class="flex gap-16">
+        <div>
+          <p class="font-medium text-ink mb-3 text-xs tracking-[0.2em] uppercase">Site</p>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="link-underline">About</a></li>
+            <li><a href="services.html" class="link-underline">Services</a></li>
+            <li><a href="contact.html" class="link-underline">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-medium text-ink mb-3 text-xs tracking-[0.2em] uppercase">Contact</p>
+          <ul class="space-y-2">
+            <li><!-- TODO: add real contact email --><a href="#" class="link-underline">Email us</a></li>
+            <li><!-- TODO: add real Instagram/KakaoTalk link --><a href="#" class="link-underline">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-ink/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const here = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('header a[href]').forEach(a => {
+        if (a.getAttribute('href').split('#')[0] === here) a.setAttribute('aria-current', 'page');
+      });
+      const btn = document.getElementById('nav-toggle'), menu = document.getElementById('nav-mobile');
+      btn.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden') === false;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
