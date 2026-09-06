@@ -39,7 +39,7 @@
 
   <style>
     body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal { opacity: 0; transform: translateY(28px) scale(.98); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
 
@@ -55,10 +55,12 @@
 </head>
 <body class="bg-canvas text-ink antialiased">
 
+  <div id="progress" class="fixed top-0 left-0 h-[3px] bg-accent z-[60]" style="width:0%"></div>
+
   <!-- ══════════════ NAV ══════════════ -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm">
+  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm transition-shadow duration-300">
     <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight">
+      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight transition-transform duration-300 hover:scale-105">
         <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
         ExpatCompass
       </a>
@@ -83,44 +85,44 @@
 
   <main>
     <!-- ══════════════ HERO ══════════════ -->
-    <section class="relative max-w-3xl mx-auto px-6 pt-40 pb-16 overflow-hidden reveal">
+    <section class="relative max-w-3xl mx-auto px-6 pt-40 pb-16 overflow-hidden">
       <div class="blob blob-float w-72 h-72 bg-accent/15 -top-16 -right-20"></div>
-      <p class="relative text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">Get In Touch</p>
-      <h1 class="relative font-serif text-4xl md:text-6xl leading-[1.05] mb-6">Let's talk.</h1>
-      <p class="relative text-lg text-muted">Have a question, a story to share, or want to get involved? Here's how to reach us.</p>
+      <p class="relative reveal text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">Get In Touch</p>
+      <h1 class="relative reveal font-serif text-4xl md:text-6xl leading-[1.05] mb-6" style="transition-delay:.1s">Let's talk.</h1>
+      <p class="relative reveal text-lg text-muted" style="transition-delay:.2s">Have a question, a story to share, or want to get involved? Here's how to reach us.</p>
     </section>
 
     <!-- ══════════════ WAYS TO CONNECT ══════════════ -->
     <section class="max-w-3xl mx-auto px-6 pb-16">
       <!-- TODO: replace with a real mailto: link once you have a contact email -->
-      <a href="#" class="group reveal flex items-center justify-between gap-6 py-8 border-t border-ink/10">
+      <a href="#" class="group reveal flex items-center justify-between gap-6 py-8 border-t border-ink/10 transition-[padding] duration-300 hover:pl-2">
         <div>
-          <h2 class="font-serif text-xl md:text-2xl mb-1 group-hover:text-accent transition-colors">Email Us</h2>
+          <h2 class="font-serif text-xl md:text-2xl mb-1 transition-colors duration-300 group-hover:text-accent">Email Us</h2>
           <p class="text-muted">Send a question or a story. <span class="italic">(link coming soon)</span></p>
         </div>
-        <span class="link-underline font-medium shrink-0">Write →</span>
+        <span class="link-underline font-medium shrink-0 inline-flex items-center gap-1">Write <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
       </a>
       <!-- TODO: replace with a real Instagram/KakaoTalk channel link -->
-      <a href="#" class="group reveal flex items-center justify-between gap-6 py-8 border-t border-ink/10">
+      <a href="#" class="group reveal flex items-center justify-between gap-6 py-8 border-t border-ink/10 transition-[padding] duration-300 hover:pl-2" style="transition-delay:.06s">
         <div>
-          <h2 class="font-serif text-xl md:text-2xl mb-1 group-hover:text-accent transition-colors">Follow the Community</h2>
+          <h2 class="font-serif text-xl md:text-2xl mb-1 transition-colors duration-300 group-hover:text-accent">Follow the Community</h2>
           <p class="text-muted">Instagram &amp; KakaoTalk. <span class="italic">(link coming soon)</span></p>
         </div>
-        <span class="link-underline font-medium shrink-0">Follow →</span>
+        <span class="link-underline font-medium shrink-0 inline-flex items-center gap-1">Follow <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
       </a>
       <!-- TODO: replace with a real survey / intake form link (part of the Survey & Awareness service) -->
-      <a href="#" class="group reveal flex items-center justify-between gap-6 py-8 border-t border-b border-ink/10">
+      <a href="#" class="group reveal flex items-center justify-between gap-6 py-8 border-t border-b border-ink/10 transition-[padding] duration-300 hover:pl-2" style="transition-delay:.12s">
         <div>
-          <h2 class="font-serif text-xl md:text-2xl mb-1 group-hover:text-accent transition-colors">Share Your Story</h2>
+          <h2 class="font-serif text-xl md:text-2xl mb-1 transition-colors duration-300 group-hover:text-accent">Share Your Story</h2>
           <p class="text-muted">Help shape what we publish next. <span class="italic">(link coming soon)</span></p>
         </div>
-        <span class="link-underline font-medium shrink-0">Share →</span>
+        <span class="link-underline font-medium shrink-0 inline-flex items-center gap-1">Share <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span></span>
       </a>
     </section>
 
     <!-- ══════════════ NOTE ══════════════ -->
     <section class="max-w-3xl mx-auto px-6 pb-28 reveal">
-      <div class="border-l-2 border-accent pl-8 py-2">
+      <div class="border-l-2 border-accent pl-8 py-2 transition-[padding] duration-300 hover:pl-10">
         <p class="text-lg text-muted">
           ExpatCompass is a knowledge base and discussion space, not a law firm. If your situation
           needs legal representation, we can connect you to our vetted
@@ -167,12 +169,26 @@
       document.querySelectorAll('header a[href]').forEach(a => {
         if (a.getAttribute('href').split('#')[0] === here) a.setAttribute('aria-current', 'page');
       });
-      const btn = document.getElementById('nav-toggle'), menu = document.getElementById('nav-mobile');
-      btn.addEventListener('click', () => {
+      const navBtn = document.getElementById('nav-toggle'), menu = document.getElementById('nav-mobile');
+      navBtn.addEventListener('click', () => {
         const open = menu.classList.toggle('hidden') === false;
-        btn.setAttribute('aria-expanded', String(open));
-        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        navBtn.setAttribute('aria-expanded', String(open));
+        navBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       });
+
+      const header = document.querySelector('header');
+      const progress = document.getElementById('progress');
+      const onScroll = () => {
+        const h = document.documentElement;
+        const pct = h.scrollHeight > h.clientHeight ? (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        progress.style.width = pct + '%';
+        const scrolled = h.scrollTop > 40;
+        header.classList.toggle('shadow-sm', scrolled);
+        header.classList.toggle('border-b', scrolled);
+        header.classList.toggle('border-ink/10', scrolled);
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     })();
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));

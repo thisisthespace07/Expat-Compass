@@ -39,7 +39,7 @@
 
   <style>
     body { font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal { opacity: 0; transform: translateY(28px) scale(.98); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
 
@@ -50,10 +50,12 @@
 </head>
 <body class="bg-canvas text-ink antialiased">
 
+  <div id="progress" class="fixed top-0 left-0 h-[3px] bg-accent z-[60]" style="width:0%"></div>
+
   <!-- ══════════════ NAV ══════════════ -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm">
+  <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm transition-shadow duration-300">
     <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight">
+      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight transition-transform duration-300 hover:scale-105">
         <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
         ExpatCompass
       </a>
@@ -78,27 +80,27 @@
 
   <main>
     <!-- ══════════════ HERO ══════════════ -->
-    <section class="max-w-3xl mx-auto px-6 pt-40 pb-20 reveal">
-      <p class="text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">What We Do</p>
-      <h1 class="font-serif text-4xl md:text-6xl leading-[1.05] mb-6">Four ways we show up for you</h1>
-      <p class="text-lg text-muted">From spotting patterns across the community to connecting you with the right person, here's how ExpatCompass works.</p>
+    <section class="max-w-3xl mx-auto px-6 pt-40 pb-20">
+      <p class="reveal text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">What We Do</p>
+      <h1 class="reveal font-serif text-4xl md:text-6xl leading-[1.05] mb-6" style="transition-delay:.1s">Four ways we show up for you</h1>
+      <p class="reveal text-lg text-muted" style="transition-delay:.2s">From spotting patterns across the community to connecting you with the right person, here's how ExpatCompass works.</p>
     </section>
 
     <!-- ══════════════ SERVICE 01 ══════════════ -->
-    <section id="survey" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
-      <span class="font-serif text-5xl text-accent/40">01</span>
+    <section id="survey" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
+      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">01</span>
       <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Survey &amp; Awareness Service</h2>
       <p class="text-muted text-lg mb-6 max-w-2xl">Collects real experiences and data from the foreigner community, then turns those findings into content that spreads awareness beyond ExpatCompass itself.</p>
       <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Community surveys</dt>
           <dd class="text-muted">Ongoing collection of real cases and challenges from foreigners across Korea.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Awareness content</dt>
           <dd class="text-muted">Findings shaped into podcasts, events, reports, or social content that reach a wider audience.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Feedback loop</dt>
           <dd class="text-muted">What people share becomes what others learn from, building our public voice and credibility.</dd>
         </div>
@@ -106,20 +108,20 @@
     </section>
 
     <!-- ══════════════ SERVICE 02 ══════════════ -->
-    <section id="guidance" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
-      <span class="font-serif text-5xl text-accent/40">02</span>
+    <section id="guidance" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
+      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">02</span>
       <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Basic Guidance &amp; Counselling</h2>
       <p class="text-muted text-lg mb-6 max-w-2xl">Simple, practical direction on common situations — without acting as a law firm or caseworker.</p>
       <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Visa &amp; status guidance</dt>
           <dd class="text-muted">Informed direction on options like staying in Korea after graduation, visa transitions, or renewals.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Peer-informed answers</dt>
           <dd class="text-muted">Guidance shaped by what others in similar situations have actually done.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Clear next steps</dt>
           <dd class="text-muted">Pointing you toward what to look into or do next, not just sympathy.</dd>
         </div>
@@ -127,20 +129,20 @@
     </section>
 
     <!-- ══════════════ SERVICE 03 ══════════════ -->
-    <section id="referral" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
-      <span class="font-serif text-5xl text-accent/40">03</span>
+    <section id="referral" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
+      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">03</span>
       <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Referral &amp; Connection Service</h2>
       <p class="text-muted text-lg mb-6 max-w-2xl">Connects you directly to trusted contacts when your situation needs more than guidance.</p>
       <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Vetted network</dt>
           <dd class="text-muted">Trusted contacts in hospitals, visa/immigration specialists, lawyers, and housing help.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Direct connections</dt>
           <dd class="text-muted">Warm handoffs to the right person, not just a generic list.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Bridge, not endpoint</dt>
           <dd class="text-muted">We get you to the right help rather than trying to be it.</dd>
         </div>
@@ -148,20 +150,20 @@
     </section>
 
     <!-- ══════════════ SERVICE 04 ══════════════ -->
-    <section id="community" class="max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24">
-      <span class="font-serif text-5xl text-accent/40">04</span>
+    <section id="community" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
+      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">04</span>
       <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Community Building &amp; Workshops</h2>
       <p class="text-muted text-lg mb-6 max-w-2xl">Ongoing touchpoints that bring people together and equip them with what they need — before problems even arise, not just after.</p>
       <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Workshops &amp; info sessions</dt>
           <dd class="text-muted">Visa renewal clinics, "know your rights" briefings, practical how-tos — in person or online.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Onboarding packets</dt>
           <dd class="text-muted">A starter guide for newly arrived foreigners covering visa, housing, healthcare, and banking basics.</dd>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4">
+        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
           <dt class="font-medium shrink-0 sm:w-48">Community meetups</dt>
           <dd class="text-muted">Casual touchpoints where survey participants and people we've helped can reconnect and become contributors themselves.</dd>
         </div>
@@ -172,8 +174,10 @@
     <section class="max-w-3xl mx-auto px-6 py-28 text-center border-t border-ink/10 reveal">
       <h2 class="font-serif text-3xl md:text-5xl mb-6">Ready to connect?</h2>
       <p class="text-muted text-lg mb-9 max-w-xl mx-auto">Reach out and we'll point you toward the right service.</p>
-      <a href="contact.html" class="inline-flex items-center gap-2 border border-ink rounded-full px-7 py-3 font-medium hover:bg-ink hover:text-canvas transition-colors duration-300">
-        Reach out <span>→</span>
+      <a href="contact.html" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-ink px-7 py-3 font-medium">
+        <span class="absolute inset-0 origin-left scale-x-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(.65,0,.35,1)] group-hover:scale-x-100"></span>
+        <span class="relative z-10 transition-colors duration-500 group-hover:text-canvas">Reach out</span>
+        <span class="relative z-10 inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:text-canvas">→</span>
       </a>
     </section>
   </main>
@@ -215,12 +219,26 @@
       document.querySelectorAll('header a[href]').forEach(a => {
         if (a.getAttribute('href').split('#')[0] === here) a.setAttribute('aria-current', 'page');
       });
-      const btn = document.getElementById('nav-toggle'), menu = document.getElementById('nav-mobile');
-      btn.addEventListener('click', () => {
+      const navBtn = document.getElementById('nav-toggle'), menu = document.getElementById('nav-mobile');
+      navBtn.addEventListener('click', () => {
         const open = menu.classList.toggle('hidden') === false;
-        btn.setAttribute('aria-expanded', String(open));
-        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        navBtn.setAttribute('aria-expanded', String(open));
+        navBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       });
+
+      const header = document.querySelector('header');
+      const progress = document.getElementById('progress');
+      const onScroll = () => {
+        const h = document.documentElement;
+        const pct = h.scrollHeight > h.clientHeight ? (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        progress.style.width = pct + '%';
+        const scrolled = h.scrollTop > 40;
+        header.classList.toggle('shadow-sm', scrolled);
+        header.classList.toggle('border-b', scrolled);
+        header.classList.toggle('border-ink/10', scrolled);
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     })();
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
