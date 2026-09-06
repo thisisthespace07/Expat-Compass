@@ -51,10 +51,6 @@
     @keyframes blobfloat { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(24px,-34px) scale(1.08); } }
     @media (prefers-reduced-motion: reduce) { .blob-float { animation: none; } }
 
-    .marquee-track { width: max-content; animation: marquee 30s linear infinite; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
-    @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
-
     [data-parallax] { will-change: transform; }
     @media (prefers-reduced-motion: reduce) { [data-parallax] { transform: none !important; } }
 
@@ -121,18 +117,6 @@
   </section>
 
   <main>
-    <!-- ══════════════ MARQUEE ══════════════ -->
-    <div class="relative border-y border-black/10 py-5 overflow-hidden reveal">
-      <div class="marquee-track flex whitespace-nowrap font-display font-medium text-lg md:text-xl tracking-tight text-ink/70 uppercase">
-        <span class="flex items-center gap-8 pr-8">
-          Visa Renewals <span class="text-accent">●</span> Workplace Rights <span class="text-accent">●</span> Housing <span class="text-accent">●</span> Healthcare <span class="text-accent">●</span> Community Stories <span class="text-accent">●</span>
-        </span>
-        <span class="flex items-center gap-8 pr-8" aria-hidden="true">
-          Visa Renewals <span class="text-accent">●</span> Workplace Rights <span class="text-accent">●</span> Housing <span class="text-accent">●</span> Healthcare <span class="text-accent">●</span> Community Stories <span class="text-accent">●</span>
-        </span>
-      </div>
-    </div>
-
     <!-- ══════════════ WHO WE ARE (statement) ══════════════ -->
     <section class="max-w-4xl mx-auto px-6 py-28 md:py-32 text-center">
       <p class="reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6">Who We Are</p>
