@@ -13,24 +13,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            canvas: '#F6F1E7',
-            panel:  '#FFFFFF',
-            ink:    '#26221C',
-            muted:  '#7A7266',
-            accent: '#9C7A3E',
+            canvas: '#12151B',
+            panel:  '#1A1F27',
+            ink:    '#F3F1EA',
+            muted:  '#98A0AC',
+            accent: '#D9A94A',
           },
           fontFamily: {
-            sans:  ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
-            serif: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+            sans: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
           },
         },
       },
@@ -55,15 +51,15 @@
   <!-- ══════════════ NAV ══════════════ -->
   <header class="fixed top-0 inset-x-0 z-50 bg-canvas/80 backdrop-blur-sm transition-shadow duration-300">
     <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-2.5 font-serif text-lg tracking-tight transition-transform duration-300 hover:scale-105">
+      <a href="index.html" class="flex items-center gap-2.5 font-extrabold text-lg tracking-tight transition-transform duration-300 hover:scale-105">
         <img src="assets/logo.png" alt="ExpatCompass logo" width="30" height="30" class="h-7 w-7 rounded-full" />
         ExpatCompass
       </a>
 
-      <ul class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide">
-        <li><a href="about.html" class="link-underline [&[aria-current]]:text-accent">About</a></li>
-        <li><a href="services.html" class="link-underline [&[aria-current]]:text-accent">Services</a></li>
-        <li><a href="contact.html" class="link-underline [&[aria-current]]:text-accent">Contact</a></li>
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <li><a href="about.html" class="link-underline text-ink/80 hover:text-ink [&[aria-current]]:text-accent">About</a></li>
+        <li><a href="services.html" class="link-underline text-ink/80 hover:text-ink [&[aria-current]]:text-accent">Services</a></li>
+        <li><a href="contact.html" class="inline-flex items-center bg-accent text-canvas font-bold text-sm rounded-full px-5 py-2.5 transition-all duration-300 hover:brightness-110 hover:scale-105">Contact</a></li>
       </ul>
 
       <button id="nav-toggle" class="md:hidden p-2 -mr-2" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
@@ -71,7 +67,7 @@
       </button>
     </nav>
 
-    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-ink/10">
+    <div id="nav-mobile" class="md:hidden hidden px-6 py-4 bg-canvas border-t border-white/10">
       <a href="about.html"    class="block py-2.5 font-medium [&[aria-current]]:text-accent">About</a>
       <a href="services.html" class="block py-2.5 font-medium [&[aria-current]]:text-accent">Services</a>
       <a href="contact.html"  class="block py-2.5 font-medium text-accent">Contact →</a>
@@ -81,112 +77,84 @@
   <main>
     <!-- ══════════════ HERO ══════════════ -->
     <section class="max-w-3xl mx-auto px-6 pt-40 pb-20">
-      <p class="reveal text-accent text-xs font-medium tracking-[0.25em] uppercase mb-5">What We Do</p>
-      <h1 class="reveal font-serif text-4xl md:text-6xl leading-[1.05] mb-6" style="transition-delay:.1s">Four ways we show up for you</h1>
+      <p class="reveal text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-5">What We Do</p>
+      <h1 class="reveal font-extrabold text-4xl md:text-7xl tracking-tight leading-[0.95] mb-6" style="transition-delay:.1s">Four ways we show up for you</h1>
       <p class="reveal text-lg text-muted" style="transition-delay:.2s">From spotting patterns across the community to connecting you with the right person, here's how ExpatCompass works.</p>
     </section>
 
-    <!-- ══════════════ SERVICE 01 ══════════════ -->
-    <section id="survey" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
-      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">01</span>
-      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Survey &amp; Awareness Service</h2>
-      <p class="text-muted text-lg mb-6 max-w-2xl">Collects real experiences and data from the foreigner community, then turns those findings into content that spreads awareness beyond ExpatCompass itself.</p>
-      <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Community surveys</dt>
-          <dd class="text-muted">Ongoing collection of real cases and challenges from foreigners across Korea.</dd>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Awareness content</dt>
-          <dd class="text-muted">Findings shaped into podcasts, events, reports, or social content that reach a wider audience.</dd>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Feedback loop</dt>
-          <dd class="text-muted">What people share becomes what others learn from, building our public voice and credibility.</dd>
-        </div>
-      </dl>
-    </section>
+    <!-- ══════════════ SERVICE CARDS ══════════════ -->
+    <section class="max-w-6xl mx-auto px-6 pb-24 grid gap-6">
 
-    <!-- ══════════════ SERVICE 02 ══════════════ -->
-    <section id="guidance" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
-      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">02</span>
-      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Basic Guidance &amp; Counselling</h2>
-      <p class="text-muted text-lg mb-6 max-w-2xl">Simple, practical direction on common situations — without acting as a law firm or caseworker.</p>
-      <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Visa &amp; status guidance</dt>
-          <dd class="text-muted">Informed direction on options like staying in Korea after graduation, visa transitions, or renewals.</dd>
+      <div id="survey" class="group reveal bg-panel ring-1 ring-white/5 rounded-3xl p-8 md:p-12 grid md:grid-cols-[auto,1fr] gap-8 items-start scroll-mt-24 transition-all duration-300 hover:ring-accent/40">
+        <span class="inline-flex w-14 h-14 rounded-full bg-accent/15 text-accent font-extrabold text-xl items-center justify-center transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">01</span>
+        <div>
+          <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight mb-3">Survey &amp; Awareness Service</h2>
+          <p class="text-muted text-lg mb-6 max-w-2xl">Collects real experiences and data from the foreigner community, then turns those findings into content that spreads awareness beyond ExpatCompass itself.</p>
+          <ul class="space-y-3 max-w-2xl">
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Community surveys —</span> <span class="text-muted">ongoing collection of real cases and challenges from foreigners across Korea.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Awareness content —</span> <span class="text-muted">findings shaped into podcasts, events, reports, or social content that reach a wider audience.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Feedback loop —</span> <span class="text-muted">what people share becomes what others learn from, building our public voice and credibility.</span></span></li>
+          </ul>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Peer-informed answers</dt>
-          <dd class="text-muted">Guidance shaped by what others in similar situations have actually done.</dd>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Clear next steps</dt>
-          <dd class="text-muted">Pointing you toward what to look into or do next, not just sympathy.</dd>
-        </div>
-      </dl>
-    </section>
+      </div>
 
-    <!-- ══════════════ SERVICE 03 ══════════════ -->
-    <section id="referral" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
-      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">03</span>
-      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Referral &amp; Connection Service</h2>
-      <p class="text-muted text-lg mb-6 max-w-2xl">Connects you directly to trusted contacts when your situation needs more than guidance.</p>
-      <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Vetted network</dt>
-          <dd class="text-muted">Trusted contacts in hospitals, visa/immigration specialists, lawyers, and housing help.</dd>
+      <div id="guidance" class="group reveal bg-panel ring-1 ring-white/5 rounded-3xl p-8 md:p-12 grid md:grid-cols-[auto,1fr] gap-8 items-start scroll-mt-24 transition-all duration-300 hover:ring-accent/40" style="transition-delay:.06s">
+        <span class="inline-flex w-14 h-14 rounded-full bg-accent/15 text-accent font-extrabold text-xl items-center justify-center transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">02</span>
+        <div>
+          <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight mb-3">Basic Guidance &amp; Counselling</h2>
+          <p class="text-muted text-lg mb-6 max-w-2xl">Simple, practical direction on common situations — without acting as a law firm or caseworker.</p>
+          <ul class="space-y-3 max-w-2xl">
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Visa &amp; status guidance —</span> <span class="text-muted">informed direction on options like staying in Korea after graduation, visa transitions, or renewals.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Peer-informed answers —</span> <span class="text-muted">guidance shaped by what others in similar situations have actually done.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Clear next steps —</span> <span class="text-muted">pointing you toward what to look into or do next, not just sympathy.</span></span></li>
+          </ul>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Direct connections</dt>
-          <dd class="text-muted">Warm handoffs to the right person, not just a generic list.</dd>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Bridge, not endpoint</dt>
-          <dd class="text-muted">We get you to the right help rather than trying to be it.</dd>
-        </div>
-      </dl>
-    </section>
+      </div>
 
-    <!-- ══════════════ SERVICE 04 ══════════════ -->
-    <section id="community" class="group max-w-4xl mx-auto px-6 py-16 border-t border-ink/10 reveal scroll-mt-24 transition-colors duration-300 hover:bg-ink/[0.02]">
-      <span class="font-serif text-5xl text-accent/40 inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-accent">04</span>
-      <h2 class="font-serif text-2xl md:text-3xl mt-4 mb-4">Community Building &amp; Workshops</h2>
-      <p class="text-muted text-lg mb-6 max-w-2xl">Ongoing touchpoints that bring people together and equip them with what they need — before problems even arise, not just after.</p>
-      <dl class="space-y-4 max-w-2xl">
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Workshops &amp; info sessions</dt>
-          <dd class="text-muted">Visa renewal clinics, "know your rights" briefings, practical how-tos — in person or online.</dd>
+      <div id="referral" class="group reveal bg-panel ring-1 ring-white/5 rounded-3xl p-8 md:p-12 grid md:grid-cols-[auto,1fr] gap-8 items-start scroll-mt-24 transition-all duration-300 hover:ring-accent/40" style="transition-delay:.12s">
+        <span class="inline-flex w-14 h-14 rounded-full bg-accent/15 text-accent font-extrabold text-xl items-center justify-center transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">03</span>
+        <div>
+          <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight mb-3">Referral &amp; Connection Service</h2>
+          <p class="text-muted text-lg mb-6 max-w-2xl">Connects you directly to trusted contacts when your situation needs more than guidance.</p>
+          <ul class="space-y-3 max-w-2xl">
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Vetted network —</span> <span class="text-muted">trusted contacts in hospitals, visa/immigration specialists, lawyers, and housing help.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Direct connections —</span> <span class="text-muted">warm handoffs to the right person, not just a generic list.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Bridge, not endpoint —</span> <span class="text-muted">we get you to the right help rather than trying to be it.</span></span></li>
+          </ul>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Onboarding packets</dt>
-          <dd class="text-muted">A starter guide for newly arrived foreigners covering visa, housing, healthcare, and banking basics.</dd>
+      </div>
+
+      <div id="community" class="group reveal bg-panel ring-1 ring-white/5 rounded-3xl p-8 md:p-12 grid md:grid-cols-[auto,1fr] gap-8 items-start scroll-mt-24 transition-all duration-300 hover:ring-accent/40" style="transition-delay:.18s">
+        <span class="inline-flex w-14 h-14 rounded-full bg-accent/15 text-accent font-extrabold text-xl items-center justify-center transition-colors duration-300 group-hover:bg-accent group-hover:text-canvas">04</span>
+        <div>
+          <h2 class="font-extrabold text-2xl md:text-3xl tracking-tight mb-3">Community Building &amp; Workshops</h2>
+          <p class="text-muted text-lg mb-6 max-w-2xl">Ongoing touchpoints that bring people together and equip them with what they need — before problems even arise, not just after.</p>
+          <ul class="space-y-3 max-w-2xl">
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Workshops &amp; info sessions —</span> <span class="text-muted">visa renewal clinics, "know your rights" briefings, practical how-tos — in person or online.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Onboarding packets —</span> <span class="text-muted">a starter guide for newly arrived foreigners covering visa, housing, healthcare, and banking basics.</span></span></li>
+            <li class="flex gap-3"><span class="text-accent">●</span><span><span class="font-semibold">Community meetups —</span> <span class="text-muted">casual touchpoints where survey participants and people we've helped can reconnect and become contributors themselves.</span></span></li>
+          </ul>
         </div>
-        <div class="flex flex-col sm:flex-row gap-1 sm:gap-4 transition-transform duration-300 hover:translate-x-1">
-          <dt class="font-medium shrink-0 sm:w-48">Community meetups</dt>
-          <dd class="text-muted">Casual touchpoints where survey participants and people we've helped can reconnect and become contributors themselves.</dd>
-        </div>
-      </dl>
+      </div>
+
     </section>
 
     <!-- ══════════════ CTA ══════════════ -->
-    <section class="max-w-3xl mx-auto px-6 py-28 text-center border-t border-ink/10 reveal">
-      <h2 class="font-serif text-3xl md:text-5xl mb-6">Ready to connect?</h2>
+    <section class="max-w-3xl mx-auto px-6 pb-28 text-center border-t border-white/10 pt-20 reveal">
+      <h2 class="font-extrabold text-3xl md:text-5xl tracking-tight mb-6">Ready to connect?</h2>
       <p class="text-muted text-lg mb-9 max-w-xl mx-auto">Reach out and we'll point you toward the right service.</p>
-      <a href="contact.html" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-ink px-7 py-3 font-medium">
-        <span class="absolute inset-0 origin-left scale-x-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(.65,0,.35,1)] group-hover:scale-x-100"></span>
-        <span class="relative z-10 transition-colors duration-500 group-hover:text-canvas">Reach out</span>
-        <span class="relative z-10 inline-block transition-all duration-500 group-hover:translate-x-1 group-hover:text-canvas">→</span>
+      <a href="contact.html" class="group inline-flex items-center gap-2 bg-accent text-canvas font-bold rounded-full px-8 py-3.5 transition-all duration-300 hover:brightness-110 hover:scale-105 active:scale-95">
+        Reach out
+        <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
       </a>
     </section>
   </main>
 
   <!-- ══════════════ FOOTER ══════════════ -->
-  <footer class="px-6 py-14 text-sm text-muted border-t border-ink/10">
+  <footer class="px-6 py-14 text-sm text-muted border-t border-white/10">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
       <div class="max-w-sm">
-        <div class="flex items-center gap-2 font-serif text-lg text-ink mb-3">
+        <div class="flex items-center gap-2 font-extrabold text-lg text-ink mb-3">
           <img src="assets/logo.png" alt="ExpatCompass logo" width="22" height="22" class="h-5 w-5 rounded-full" loading="lazy" />
           ExpatCompass
         </div>
@@ -194,7 +162,7 @@
       </div>
       <div class="flex gap-16">
         <div>
-          <p class="font-medium text-ink mb-3 text-xs tracking-[0.2em] uppercase">Site</p>
+          <p class="font-semibold text-ink mb-3 text-xs tracking-[0.2em] uppercase">Site</p>
           <ul class="space-y-2">
             <li><a href="about.html" class="link-underline">About</a></li>
             <li><a href="services.html" class="link-underline">Services</a></li>
@@ -202,7 +170,7 @@
           </ul>
         </div>
         <div>
-          <p class="font-medium text-ink mb-3 text-xs tracking-[0.2em] uppercase">Contact</p>
+          <p class="font-semibold text-ink mb-3 text-xs tracking-[0.2em] uppercase">Contact</p>
           <ul class="space-y-2">
             <li><!-- TODO: add real contact email --><a href="#" class="link-underline">Email us</a></li>
             <li><!-- TODO: add real Instagram/KakaoTalk link --><a href="#" class="link-underline">Instagram</a></li>
@@ -210,7 +178,7 @@
         </div>
       </div>
     </div>
-    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-ink/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
+    <p class="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/10">© 2026 ExpatCompass. Seoul, South Korea.</p>
   </footer>
 
   <script>
@@ -233,9 +201,10 @@
         const pct = h.scrollHeight > h.clientHeight ? (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 : 0;
         progress.style.width = pct + '%';
         const scrolled = h.scrollTop > 40;
-        header.classList.toggle('shadow-sm', scrolled);
+        header.classList.toggle('shadow-lg', scrolled);
+        header.classList.toggle('shadow-black/20', scrolled);
         header.classList.toggle('border-b', scrolled);
-        header.classList.toggle('border-ink/10', scrolled);
+        header.classList.toggle('border-white/10', scrolled);
       };
       document.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
